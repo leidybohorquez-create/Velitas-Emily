@@ -1,0 +1,369 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #1a1a1a;
+            color: #fff;
+        }
+
+        header {
+            background-color: #241c16;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #b8734d;
+        }
+
+        h1 {
+            color: #ffc999;
+        }
+
+        .contenedor {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tarjeta {
+            background-color: #241c16;
+            border: 1px solid #b8734d;
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .tarjeta img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+
+        .tarjeta h3 {
+            color: #ffc999;
+            margin: 8px 0;
+        }
+
+        .precio {
+            color: #ffd700;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin: 5px 0;
+        }
+
+        .descripcion {
+            color: #e5b896;
+            font-size: 0.9em;
+            margin-bottom: 12px;
+        }
+
+        .boton {
+            display: inline-block;
+            background-color: #25d366;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .boton:hover {
+            background-color: #128c7e;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Catálogo de Productos</h1>
+    </header>
+
+    <div class="contenedor">
+
+        <!-- TARJETA 1 -->
+        <div class="tarjeta">
+            
+            <img src="imagenes/cachorros.jpg" alt="CACHORROS" class="imagen-producto" style="width: 150px; aspect-ratio: 5/7; object-fit: cover;">
+            <h3>CACHORROS</h3>
+            <p class="precio">$17.000 COP</p>
+            <p class="descripcion">Vela de  gr en cera de soya, alto  cm, ancho  cm, el regalo perfecto para cualquier ocasión. <p>
+            <a href="https://wa.me/573208481153?text=Hola! Quiero información sobre: CACHORROS" target="_blank" class="boton">
+                💬 Pedir información
+            </a>
+        </div>
+
+        <!-- TARJETA 2 -->
+        <div class="tarjeta">
+            <img src="imagenes/amoreterno.png" alt="AMOR ETERNO" class="imagen-producto" style="width: 150px; aspect-ratio: 5/7; object-fit: cover;">
+            <h3>AMOR ETERNO</h3>
+            <p class="precio">$12.000 COP</p>
+            <p class="descripcion">Vela de 65 gr en cera de soya, alto 4 cm, ancho 8cm, el regalo perfecto para cualquier ocasión. </p>
+            <a href="https://wa.me/573208481153?text=Hola! Quiero información sobre: AMOR ETERNO" target="_blank" class="boton">
+                💬 Pedir información
+            </a>
+        </div>
+
+        <!-- TARJETA 3 -->
+        <div class="tarjeta">
+            <img src="imagenes/angel.jpg" alt="ANGEL" class="imagen-producto" style="width: 150px; aspect-ratio: 5/7; object-fit: cover;">
+            <h3>ANGEL </h3>
+            <p class="precio">$9.000 cop</p>
+            <p class="descripcion">Vela de 35 gr en cera de soya, alto 5 cm, ancho 6 cm, el regalo perfecto para cualquier ocasión.</p>
+            <a href="https://wa.me/573208481153?text=Hola! Quiero información sobre: PRODUCTO 3" target="_blank" class="boton">
+                💬 Pedir información
+            </a>
+        </div>
+
+        <!-- TARJETA 4 -->
+        <div class="tarjeta">
+            <img src="imagenes/arboldenavidad.jpg" alt="ARBOL DE NAVIDAD" class="imagen-producto" style="width: 150px; aspect-ratio: 5/7; object-fit: cover;">
+            <h3>ARBOL DE NAVIDAD</h3>
+            <p class="precio">$17.000 cop</p>
+            <p class="descripcion">Vela de 70 gr en cera de soya, alto 7.5 cm, ancho 7.5 cm, el regalo perfecto para cualquier ocasión.</p>
+            <a href="https://wa.me/573208481153?text=Hola! Quiero información sobre: PRODUCTO 4" target="_blank" class="boton">
+                💬 Pedir información
+            </a>
+        </div>
+
+        <!-- TARJETA 5 -->
+        <div class="tarjeta">
+            <img src="imagenes/bolitaderosa.jpg" alt="BOLITA DE ROSA" class="imagen-producto" style="width: 150px; aspect-ratio: 5/7; object-fit: cover;">
+            <h3>BOLITA DE ROSA</h3>
+            <p class="precio">$7.000 cop</p>
+            <p class="descripcion">Vela de 20 gr en cera de soya, alto 4 cm, ancho 5.5 cm, el regalo perfecto para cualquier ocasión.</p>
+            <a href="https://wa.me/573208481153?text=Hola! Quiero información sobre: PRODUCTO 5" target="_blank" class="boton">
+                💬 Pedir información
+            </a>
+        </div>
+
+        <!-- TARJETA 6 -->
+        <div class="tarjeta">
+            <img src="imagenes/buenasuerte.png" alt="BUENA SUERTE" class="imagen-producto" style="width: 150px; aspect-ratio: 5/7; object-fit: cover;">
+            <h3>BUENA SUERTE</h3>
+            <p class="precio">$10.000</p> 
+            <p class="descripcion">Vela de 65 gr en cera de soya, alto 4 cm, ancho 8cm, el regalo perfecto para cualquier ocasión.</p>
+            <a href="https://wa.me/573208481153?text=Hola! Quiero información sobre: PRODUCTO 6" target="_blank" class="boton">
+                💬 Pedir información
+            </a>
+        </div>
+
+        <!-- TARJETA 7 -->
+        <div class="tarjeta">
+             <img src="imagenes/choza.jpg" alt="CHOZA" class="imagen-producto" style="width: 150px; aspect-ratio: 5/7; object-fit: cover;">
+            <h3>CHOZA</h3>
+            <p class="precio">$12.000 COP</p>
+            <p class="descripcion">Vela de 60 gr en cera de soya, alto 6 cm, ancho 8 cm, el regalo perfecto para cualquier ocasión.</p>
+            <a href="https://wa.me/573208481153?text=Hola! Quiero información sobre: PRODUCTO 7" target="_blank" class="boton">
+                💬 Pedir información
+            </a>
+        </div>
+
+        <!-- TARJETA 8 -->
+        <div class="tarjeta">
+             <img src="imagenes/colmena.jpg" alt="COLMENA" class="imagen-producto" style="width: 150px; aspect-ratio: 5/7; object-fit: cover;">
+            <h3>COLMENA</h3>
+            <p class="precio">$9.000 COP</p>
+            <p class="descripcion">Vela de 35 gr en cera de soya, alto 4 cm, ancho 4 cm, el regalo perfecto para cualquier ocasión.</p>
+            <a href="https://wa.me/573208481153?text=Hola! Quiero información sobre: PRODUCTO 8" target="_blank" class="boton">
+                💬 Pedir información
+            </a>
+        </div>
+
+        <!-- TARJETA 9 -->
+        <div class="tarjeta">
+            <img src="imagenes/corazon.jpg" alt="CORAZON" class="imagen-producto" style="width: 150px; aspect-ratio: 5/7; object-fit: cover;">
+            <h3>CORAZON</h3>
+            <p class="precio">$8.000 COP</p>
+            <p class="descripcion">Vela de 45 gr en cera de soya, alto 5 cm, ancho 1 cm, el regalo perfecto para cualquier ocasión.</p>
+            <a href="https://wa.me/573208481153?text=Hola! Quiero información sobre: PRODUCTO 9" target="_blank" class="boton">
+                💬 Pedir información
+            </a>
+        </div>
+
+        <!-- TARJETA 10 -->
+        <div class="tarjeta">
+            <img src="imagenes/dama.jpg" alt="DAMA" class="imagen-producto" style="width: 150px; aspect-ratio: 5/7; object-fit: cover;">
+            <h3>DAMA</h3>
+            <p class="precio">$19.000 COP</p>
+            <p class="descripcion">Vela de 140gr en cera de soya, alto 10 cm, ancho 7 cm, el regalo perfecto para cualquier ocasión.</p>
+            <a href="https://wa.me/573208481153?text=Hola! Quiero información sobre: PRODUCTO 10" target="_blank" class="boton">
+                💬 Pedir información
+            </a>
+        </div>
+
+        <!-- TARJETA 11 -->
+        <div class="tarjeta">
+            <img src="imagenes/dulceespera.jpg" alt="DULCE ESPERANZA" class="imagen-producto" style="width: 150px; aspect-ratio: 5/7; object-fit: cover;">
+            <h3>DULCE ESPERANZA</h3>
+            <p class="precio">$12.000 COP</p>
+            <p class="descripcion">Vela de 45 gr en cera de soya, alto 5 cm, ancho 8 cm, el regalo perfecto para cualquier ocasión.</p>
+            <a href="https://wa.me/573208481153?text=Hola! Quiero información sobre: PRODUCTO 11" target="_blank" class="boton">
+                💬 Pedir información
+            </a>
+        </div>
+
+        <!-- TARJETA 12 -->
+        <div class="tarjeta">
+            <img src="imagenes/eclipse.jpg" alt="ECLIPSE" class="imagen-producto" style="width: 150px; aspect-ratio: 5/7; object-fit: cover;">
+            <h3>ECLIPSE</h3>
+            <p class="precio">$12.000 COP</p>
+            <p class="descripcion">Vela de 55 gr en cera de soya, alto 7 cm, ancho 7 cm, el regalo perfecto para cualquier ocasión.</p>
+            <a href="https://wa.me/573208481153?text=Hola! Quiero información sobre: PRODUCTO 12" target="_blank" class="boton">
+                💬 Pedir información
+            </a>
+        </div>
+
+        <!-- TARJETA 13 -->
+        <div class="tarjeta">
+            <img src="imagenes/elefantebuenasuerte.jpg" alt="ELEFANTE BUENA SUERTE" class="imagen-producto" style="width: 150px; aspect-ratio: 5/7; object-fit: cover;">
+            <h3>ELEFANTE BUENA SUERTE</h3>
+            <p class="precio">$12.000 COP</p>
+            <p class="descripcion">Vela de 65 gr en cera de soya, alto 8 cm, ancho 7 cm, el regalo perfecto para cualquier ocasión.</p>
+            <a href="https://wa.me/573208481153?text=Hola! Quiero información sobre: PRODUCTO 13" target="_blank" class="boton">
+                💬 Pedir información
+            </a>
+        </div>
+
+        <!-- TARJETA 14 -->
+        <div class="tarjeta">
+            <img src="imagenes/familia.png" alt="FAMILIA" class="imagen-producto" style="width: 150px; aspect-ratio: 5/7; object-fit: cover;">
+            <h3>FAMILIA</h3>
+            <p class="precio">$12.000 COP</p>
+            <p class="descripcion">Vela de 75 gr en cera de soya, alto 8 cm, ancho 6cm, el regalo perfecto para cualquier ocasión.</p>
+            <a href="https://wa.me/573208481153?text=Hola! Quiero información sobre: PRODUCTO 14" target="_blank" class="boton">
+                💬 Pedir información
+            </a>
+        </div>
+
+        <!-- TARJETA 15 -->
+        <div class="tarjeta">
+            <img src="imagenes/fraseshermosas.png" alt="FRASES HERMOSAS" class="imagen-producto" style="width: 150px; aspect-ratio: 5/7; object-fit: cover;">
+            <h3>FRASES HERMOSAS</h3>
+            <p class="precio">$22.000 COP</p>
+            <p class="descripcion">Caja incluye 10 velas cada una de un aproximado de 10 cm de alto</p>
+            <a href="https://wa.me/573208481153?text=Hola! Quiero información sobre: PRODUCTO 15" target="_blank" class="boton">
+                💬 Pedir información
+            </a>
+        </div>
+
+        <!-- TARJETA 16 -->
+        <div class="tarjeta">
+            <img src="imagenes/guadalupe.jpg" alt="GUADALUPE" class="imagen-producto" style="width: 150px; aspect-ratio: 5/7; object-fit: cover;">
+            <h3>GUADALUPE</h3>
+            <p class="precio">$14.000 COP</p>
+            <p class="descripcion">Vela de 110 gr en cera de soya, alto 9 cm, ancho 5 cm, el regalo perfecto para cualquier ocasión.</p>
+            <a href="https://wa.me/573208481153?text=Hola! Quiero información sobre: PRODUCTO 16" target="_blank" class="boton">
+                💬 Pedir información
+            </a>
+        </div>
+
+        <!-- TARJETA 17 -->
+        <div class="tarjeta">
+            <img src="imagenes/intensamente.jpg" alt="INTENSAMENTE" class="imagen-producto" style="width: 150px; aspect-ratio: 5/7; object-fit: cover;">
+            <h3>INTENSAMENTE</h3>
+            <p class="precio">$22.000 COP</p>
+            <p class="descripcion">Caja incluye 10 velas cada una de un aproximado de 10 cm de alto</p>
+            <a href="https://wa.me/573208481153?text=Hola! Quiero información sobre: PRODUCTO 17" target="_blank" class="boton">
+                💬 Pedir información
+            </a>
+        </div>
+
+        <!-- TARJETA 18 -->
+        <div class="tarjeta">
+            <img src="imagenes/jirafa.jpg" alt="JIRAFA" class="imagen-producto" style="width: 150px; aspect-ratio: 13/7; object-fit: cover;">
+            <h3>JIRAFA</h3>
+            <p class="precio">$12.000 COP</p>
+            <p class="descripcion">Vela de 80 gr en cera de soya, alto 10 cm, ancho 6 cm, el regalo perfecto para cualquier ocasión.</p>
+            <a href="https://wa.me/573208481153?text=Hola! Quiero información sobre: PRODUCTO 18" target="_blank" class="boton">
+                💬 Pedir información
+            </a>
+        </div>
+
+        <!-- TARJETA 19 -->
+        <div class="tarjeta">
+             <img src="imagenes/jumbo.png" alt="JUMBO" class="imagen-producto" style="width: 150px; aspect-ratio: 5/7; object-fit: cover;">
+            <h3>JUMBO</h3>
+            <p class="precio">$14.000 COP</p>
+            <p class="descripcion">Vela de 80 gr en cera de soya, alto 8 cm, ancho 8 cm, el regalo perfecto para cualquier ocasión.</p>
+            <a href="https://wa.me/573208481153?text=Hola! Quiero información sobre: PRODUCTO 19" target="_blank" class="boton">
+                💬 Pedir información
+            </a>
+        </div>
+
+        <!-- TARJETA 20 -->
+        <div class="tarjeta">
+            <img src="imagenes/lazada.jpg" alt="LAZADA" class="imagen-producto" style="width: 150px; aspect-ratio: 5/7; object-fit: cover;">
+            <h3>LAZADA</h3>
+            <p class="precio">$14.000 COP</p>
+            <p class="descripcion">Vela de 90 gr en cera de soya, alto 6.5 cm, ancho 6 cm, el regalo perfecto para cualquier ocasión.</p>
+            <a href="https://wa.me/573208481153?text=Hola! Quiero información sobre: PRODUCTO 20" target="_blank" class="boton">
+                💬 Pedir información
+            </a>
+        </div>
+
+        <!-- TARJETA 21 -->
+        <div class="tarjeta">
+            <img src="imagenes/leon.jpg" alt="LEON" class="imagen-producto" style="width: 150px; aspect-ratio: 5/7; object-fit: cover;">
+            <h3>LEON</h3>
+            <p class="precio">$10.000 COP</p>
+            <p class="descripcion">Vela de 35 gr en cera de soya, alto 6.5 cm, ancho 4.5 cm, el regalo perfecto para cualquier ocasión.</p>
+            <a href="https://wa.me/573208481153?text=Hola! Quiero información sobre: PRODUCTO 21" target="_blank" class="boton">
+                💬 Pedir información
+            </a>
+        </div>
+
+        <!-- TARJETA 22 -->
+        <div class="tarjeta">
+            <img src="imagenes/margaritas.jpg" alt="MARGARITAS" class="imagen-producto" style="width: 150px; aspect-ratio: 5/7; object-fit: cover;">
+            <h3>MARGARITAS</h3>
+            <p class="precio">$7.000 COP</p>
+            <p class="descripcion">Vela de 20 gr en cera de soya, alto 1 cm, ancho 6cm, el regalo perfecto para cualquier ocasión.</p>
+            <a href="https://wa.me/573208481153?text=Hola! Quiero información sobre: PRODUCTO 22" target="_blank" class="boton">
+                💬 Pedir información
+            </a>
+        </div>
+
+        <!-- TARJETA 23 -->
+        <div class="tarjeta">
+            <img src="imagenes/michi.png" alt="MICHI" class="imagen-producto" style="width: 150px; aspect-ratio: 5/7; object-fit: cover;">
+            <h3>MICHI</h3>
+            <p class="precio">$8.000 COP</p>
+            <p class="descripcion">Vela de 30 gr en cera de soya, alto 5.5 cm, ancho 6 cm, el regalo perfecto para cualquier ocasión.</p>
+            <a href="https://wa.me/573208481153?text=Hola! Quiero información sobre: PRODUCTO 23" target="_blank" class="boton">
+                💬 Pedir información
+            </a>
+        </div>
+
+        <!-- TARJETA 24 -->
+        <div class="tarjeta">
+            <img src="imagenes/mimundo.jpg" alt="MI MUNDO" class="imagen-producto" style="width: 150px; aspect-ratio: 5/7; object-fit: cover;">
+            <h3>MI MUNDO</h3>
+            <p class="precio">$19.000 COP</p>
+            <p class="descripcion">Vela de 150 gr en cera de soya, alto 7 cm, ancho 7 cm, el regalo perfecto para cualquier ocasión.</p>
+            <a href="https://wa.me/573208481153?text=Hola! Quiero información sobre: PRODUCTO 24" target="_blank" class="boton">
+                💬 Pedir información
+            </a>
+        </div>
+
+        
+    </div>
+
+</body>
+</html>
+

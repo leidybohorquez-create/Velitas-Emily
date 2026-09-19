@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📞 Contacto - Tienda Velitas</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;font-family:Georgia,serif}
+        body{background:linear-gradient(135deg,#000,#1a1a1a);color:#ffd8b8;padding:40px 20px;min-height:100vh}
+        .contenedor{max-width:700px;margin:0 auto}
+        header{text-align:center;padding:30px;background:radial-gradient(circle,#2b1f16,#000);border-radius:20px;margin-bottom:40px;border:2px solid #d4956a}
+        h1{font-size:2.5em;background:linear-gradient(90deg,#ffb380,#ffd2b3,#ffb380);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        
+        .tarjeta-contacto{
+            background:linear-gradient(145deg,#241c16,#1a1510);
+            padding:35px;
+            border-radius:20px;
+            border:1px solid #b8734d;
+            box-shadow:0 10px 30px rgba(0,0,0,0.3)
+        }
+        h2{color:#ffc999;margin-bottom:25px;text-align:center}
+        .descripcion{text-align:center;margin-bottom:30px;color:#e5b896;line-height:1.6}
+        
+        .form-grupo{margin-bottom:20px}
+        label{display:block;margin-bottom:8px;color:#ffc999;font-weight:bold}
+        input, textarea{
+            width:100%;padding:14px;border-radius:10px;
+            border:1px solid #b8734d;background:#2a2018;
+            color:#ffd8b8;font-size:16px;outline:none
+        }
+        input:focus, textarea:focus{border-color:#ffb380;box-shadow:0 0 0 2px rgba(255,179,128,0.2)}
+        textarea{min-height:120px;resize:vertical}
+        
+        button{
+            width:100%;padding:15px;background:#25D366;
+            color:white;border:none;border-radius:50px;
+            font-size:18px;font-weight:bold;cursor:pointer;
+            transition:all .3s;margin-top:10px
+        }
+        button:hover{background:#1da854;transform:scale(1.02)}
+        button:disabled{opacity:0.6;cursor:not-allowed;transform:none}
+        
+        .mensaje{margin-top:20px;padding:15px;border-radius:10px;text-align:center;display:none}
+        .exito{background:rgba(37,211,102,0.15);border:1px solid #25D366;color:#90ee90}
+        .error{background:rgba(255,82,82,0.15);border:1px solid #ff5252;color:#ffb3b3}
+    </style>
+</head>
+<body>
+
+<div class="contenedor">
+    <header>
+        <h1>📬 Contáctanos</h1>
+        <p style="color:#f8b996;margin-top:10px">Escríbenos por WhatsApp ✨</p>
+    </header>
+
+    <div class="tarjeta-contacto">
+        <h2>Envíanos un mensaje</h2>
+        <p class="descripcion">Completa el formulario y te responderemos de inmediato a través de WhatsApp.</p>
+
+        <form id="form-contacto">
+            <div class="form-grupo">
+                <label for="nombre">Tu Nombre</label>
+                <input type="text" id="nombre" required placeholder="Escribe tu nombre">
+            </div>
+
+            <div class="form-grupo">
+                <label for="telefono">Tu Teléfono</label>
+                <input type="tel" id="telefono" required placeholder="Tu número con código de país, ej: 57320...">
+            </div>
+
+            <div class="form-grupo">
+                <label for="mensaje">Tu Mensaje</label>
+                <textarea id="mensaje" required placeholder="¿En qué te podemos ayudar?"></textarea>
+            </div>
+
+            <button type="submit" id="btn-enviar">💬 Enviar por WhatsApp</button>
+        </form>
+
+        <div id="mensaje-exito" class="mensaje exito">✅ Mensaje enviado con éxito</div>
+        <div id="mensaje-error" class="mensaje error">❌ Hubo un problema, intenta de nuevo</div>
+    </div>
+</div>
+
+<script>
+// ==============================================
+// ✅ TUS DATOS — LLENA ESTO 👇
+// ==============================================
+const TOKEN = "EAAP0WJbLZBOcBSoWiggJiVYNsAHxIENjbFxCNPu8RXHEZAZAzl0KOuZB5q2GeIZAWWQkt3dfqoZAdSQZBXidtVdj8kfq7OKY8xhur2MCNNNby4MUQONtZARx6tANO4U79nyhllP3tuAvCZBE0p1z19tkgZAOPZC8pUc9jGbZAMvlZC68iqKD26ltsELyPYhkcQoEbkGCWZA1mNvnxlmQ9Ru9QuIbL0uHdXAfK28Xu5aBuP9RceKd4irqj2x2UasO05qZCflj2fxjXzRcQet9xDN5M5DwPEtQKK0";  // ← TU TOKEN AQUÍ
+const NUMERO_ID = "1300210556515189";              // ← TU NÚMERO ID
+const VERSION_API = "v21.0";
+const NUMERO_DESTINO = "573208481153";             // ← TU NÚMERO QUE RECIBE
+
+// ==============================================
+// NO TOCAR DESDE AQUÍ 👇
+// ==============================================
+const form = document.getElementById("form-contacto");
+const btn = document.getElementById("btn-enviar");
+const exito = document.getElementById("mensaje-exito");
+const error = document.getElementById("mensaje-error");
+
+form.addEventListener("submit", async function(e) {
+    e.preventDefault();
+    
+    const nombre = document.getElementById("nombre").value.trim();
+    const telefono = document.getElementById("telefono").value.trim();
+    const mensaje = document.getElementById("mensaje").value.trim();
+
+    if(!nombre || !telefono || !mensaje) {
+        error.style.display = "block";
+        setTimeout(() => error.style.display = "none", 3000);
+        return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = "Enviando...";
+    exito.style.display = "none";
+    error.style.display = "none";
+
+    const texto = `📬 Nuevo mensaje de contacto:
+👤 Nombre: ${nombre}
+📞 Teléfono: ${telefono}
+💬 Mensaje: ${mensaje}`;
+
+    try {
+        const respuesta = await fetch(
+            `https://graph.facebook.com/${VERSION_API}/${NUMERO_ID}/messages`,
+            {
+                method: "POST",
+                headers: {
+                    "Authorization": `Bearer ${TOKEN}`,
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    messaging_product: "whatsapp",
+                    to: NUMERO_DESTINO,
+                    text: { body: texto }
+                })
+            }
+        );
+
+        const datos = await respuesta.json();
+        
+        if(datos.error) {
+            throw new Error(datos.error.message);
+        }
+        
+        exito.style.display = "block";
+        form.reset();
+        setTimeout(() => exito.style.display = "none", 4000);
+        
+    } catch(err) {
+        console.error("Error completo:", err);
+        alert("Detalle del error: " + err.message);
+        error.style.display = "block";
+        setTimeout(() => error.style.display = "none", 4000);
+    } finally {
+        btn.disabled = false;
+        btn.textContent = "💬 Enviar por WhatsApp";
+    }
+});
+</script>
+
+</body>
+</html>
